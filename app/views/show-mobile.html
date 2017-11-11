@@ -1,0 +1,45 @@
+<div>
+  <h1>모바일뱅킹 지표조회</h1>
+
+<form>
+  &nbsp;&nbsp;&nbsp;&nbsp지표 조회&nbsp;&nbsp;&nbsp;&nbsp
+  <input type = "text" ng-model="ret_date" maxlength=8 size=8 />&nbsp;&nbsp&nbsp
+  <input type = "button" name="ret_btn" value="지표 조회" 
+  ng-click="call_gipyo_data()"/>
+</form>
+<br><br>
+  <table class="table">
+    <thead><tr>
+               <th>일자</th>
+               <th>지표이름</th>
+               <th>건수</th>
+               <th>지표설명</th>
+    </tr></thead>
+    <tbody>
+      <tr ng-repeat="obj in mobileList">
+        <!--
+        <td><button type="button" class="btn btn-info btn-lg"   ng-click="requestUserDetail(obj.id)"  >{{obj.id}}</button> </td>
+         -->
+         
+        <td><input type="text" size=8 class="form-control" ng-model="obj.IndexDate"></td>      
+        <td><input type="text" class="form-control" ng-model="obj.indi_name"></td>
+        <td><input type="text" class="form-control" ng-model="obj.Indicatordata"></td>
+        <td><input type="text" class="form-control" ng-model="obj.description"></td>
+      </tr>
+    </tbody>
+  </table>
+
+<!--
+<table class="table"> 
+      <thead><tr><th>id</th><th>name</th><th>age</th> </tr></thead>
+      <tr ng-repeat="obj2 in userDetail">
+        <td>{{obj2.id}}  </td>
+        <td>{{obj2.name}}</td>
+        <td>{{obj2.age}}</td>   
+      </tr>
+    </table>
+-->
+
+
+ <!-- Trigger the modal with a button -->
+  

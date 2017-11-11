@@ -17,26 +17,20 @@ angular.module('angularJsexamApp')
       'Karma'
     ];
 
-    $scope.name=""
-    $scope.description=""
-    $scope.base_type=""
-
-	console.log($scope.name);
-	console.log($scope.description);
-	console.log($scope.base_type);
+    $scope.name =""
+    $scope.age =""
 
     $scope.saveUserInfo = function(){
     	var dataPromise = Data.setData(
     		'http://127.0.0.1:52273/user',
-    		   '&name=' + $scope.name  + 
-    		 '&description=' + $scope.description +
-    		 '&base_type=' + $scope.base_type 
-    		 );
+    		 '&name=' + $scope.name  + '&age=' + $scope.age );
     	dataPromise.then(function(restful){
-		    $scope.name =""
-		    $scope.description =""
-		    $scope.base_type =""
+    		$scope.name = ""
+    		$scope.age = ""
     		}, 	function(reason){}
     		,	function(update){}) 
+     
     }
+ 
+
   }]);

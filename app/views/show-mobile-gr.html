@@ -1,0 +1,47 @@
+<div>
+  <h1>일자별 추이</h1>
+
+<form>
+  &nbsp;&nbsp;&nbsp;&nbsp지표 종류&nbsp;&nbsp;&nbsp;&nbsp
+  <input type = "button" name="ret_btn" value="S뱅크조회건수" 
+  ng-click="call_gipyo_data1(1)"/>&nbsp;&nbsp&nbsp;&nbsp
+    <input type = "button" name="ret_btn" value="S뱅크거래건수" 
+  ng-click="call_gipyo_data1(2)"/>&nbsp;&nbsp&nbsp;&nbsp
+    <input type = "button" name="ret_btn" value="간편서비스건수" 
+  ng-click="call_gipyo_data1(3)"/>&nbsp;&nbsp&nbsp;&nbsp
+    <input type = "button" name="ret_btn" value="연락처거래건수" 
+  ng-click="call_gipyo_data1(4)"/>&nbsp;&nbsp&nbsp;&nbsp
+</form>
+<br><br>
+  <table class="table">
+    <thead><tr>
+               <th>일자</th>
+               <th>건수</th>
+    </tr></thead>
+    <tbody>
+      <tr ng-repeat="obj in mobileList">
+        <!--
+        <td><button type="button" class="btn btn-info btn-lg"   ng-click="requestUserDetail(obj.id)"  >{{obj.id}}</button> </td>
+         -->
+         
+        <td><input type="text"  class="form-control" ng-model="obj.IndexDate"></td>      
+        <td><input type="text" class="form-control" ng-model="obj.Indicatordata"></td>
+      </tr>
+    </tbody>
+  </table>
+
+<script src="node_modules/chart.js/Chart.min.js"></script>
+<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+
+<canvas id="bar" class="chart chart-bar"
+  chart-data="data" chart-labels="labels"> chart-series="series"
+</canvas>
+
+  <!--
+<script src="node_modules/chart.js/Chart.min.js"></script>
+<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+
+<canvas id="bar" class="chart chart-bar"
+  chart-data="data" chart-labels="labels"> chart-series="series"
+</canvas>
+ -->
